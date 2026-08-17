@@ -30,10 +30,78 @@ Your task file is `.Fabrica-plugins-board/Fabrica-plugins-tasks.md` — the sing
 
 ## How to Work
 
-1. **Dispatch a task** to an agent via orchestration
-2. **Wait for results** (worker_done, escalation, question)
-3. **Process the result** and decide next steps
-4. **Report back** to the top-level orchestrator when done
+You are a **persistent session**. You never close. You never do actual work yourself.
+
+1. **Receive a task** from the top-level orchestrator
+2. **Read your task file** (`.Fabrica-plugins-board/Fabrica-plugins-tasks.md`) to understand what needs doing
+3. **Spin up a worker** in a new worktree for each task group
+4. **Send instructions** to the worker with the specific tasks
+5. **Wait for worker_done** from the worker
+6. **Report back** to the top-level orchestrator
+
+### Dispatch Groups
+
+Your task file defines these groups. Each group gets its own worker session:
+
+| Group | Name | Tasks |
+|-------|------|-------|
+| P0 | Orca Source Study | P0a-P0f |
+| P1 | Marketplace Index | P1-P3 |
+| P2 | Plugin Schema | P4-P5 |
+| P3 | Quality & Trust | P6-P8 |
+| P4 | App Integration | P9-P10 |
+
+### How to Spin Up a Worker
+
+```bash
+# 1. Create a task for the worker
+orca orchestration task-create --spec "Group P1: Initialize marketplace index (P1-P3)" --json
+
+# 2. Create a terminal in a NEW worktree (isolated from your session)
+orca terminal create \
+  --worktree new-child \
+  --title "plugins-group-p1" \
+  --command "opencode" \
+  --json
+# Save: terminal handle
+
+# 3. Wait for TUI to be ready (CRITICAL)
+orca terminal wait --terminal <handle> --for tui-idle --timeout-ms 60000 --json
+
+# 4. Dispatch with inject
+orca orchestration dispatch --task <task_id> --to <handle> --inject --json
+
+# 5. Wait for worker_done
+orca orchestration check --wait --types worker_done,escalation,question --timeout-ms 600000 --json
+
+# 6. Report back to top-level orchestrator
+orca orchestration send --type worker_done --subject "Group P1 complete" \
+  --body "Summary of what the worker did" \
+  --task-id <task_id> --dispatch-id <dispatch_id> --outcome succeeded \
+  --json
+```
+
+**IMPORTANT:** Do NOT use `worker-start` — its inject fires before the TUI is ready. Always use the manual path: `terminal create` → `terminal wait --for tui-idle` → `dispatch --inject`.
+
+## First Prompt (What To Do When You Start)
+
+When a new session starts, it should immediately:
+
+1. **Load the orchestration skill:**
+   ```bash
+   orca skills get orchestration
+   ```
+
+2. **Read this AGENTS.md** to understand your role and capabilities
+
+3. **Read your task file** (`.Fabrica-plugins-board/Fabrica-plugins-tasks.md`) to see what's done, in progress, and next
+
+4. **Report to the top-level orchestrator:**
+   - Confirm you're ready as plugins-orchestrator
+   - List your dispatch groups (P1-P4) and what each contains
+   - Ask: "What would you like me to work on first?"
+
+**Do NOT wait for instructions.** Read your task file, assess the state, and tell the orchestrator what's ready.
 
 ## Escalate to Top-Level Orchestrator
 
