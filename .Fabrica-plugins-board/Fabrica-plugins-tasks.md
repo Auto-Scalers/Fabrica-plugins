@@ -6,8 +6,8 @@
 
 ## Status Legend
 
+- **DONE** — implemented and verified
 - **VERIFY** — implemented, needs verification
-- **VERIFY** — implemented and verified
 - **PARTIAL** — partially implemented
 - **TODO** — planned, not started
 - **BLOCKED** — waiting on dependency
@@ -20,12 +20,12 @@
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| P0a | Clone `stablyai/orca-plugins` into `_sources/orca-plugins/` | **TODO** | Marketplace index — the core reference for schema and format |
-| P0b | Clone bundled plugin repos into `_sources/` | **TODO** | `orca-portuguese`, `orca-navigation-shortcuts`, `orca-multipass-recipes` |
-| P0c | Clone theme/skill plugin repos into `_sources/` | **TODO** | `orca-solarized-terminal`, `orca-minimal-icons`, `orca-nord-theme`, `orca-midnight-theme`, `orca-workflow-skills` |
-| P0d | Study marketplace index format from cloned repo | **TODO** | Document schema, fields, validation rules, git source format |
-| P0e | Study bundled plugin manifest format | **TODO** | `orca-plugin.json` → `fabrica-plugin.json`, `engines.orca` → `engines.fabrica`, publisher rename |
-| P0f | Document rename strategy | **TODO** | `stablyai` → `autoscalers`, `orca-*` → `fabrica-*`, URLs, repo references |
+| P0a | Clone `stablyai/orca-plugins` into `_sources/orca-plugins/` | **DONE** | Cloned to `_sources/orca-plugins/` |
+| P0b | Clone bundled plugin repos into `_sources/` | **DONE** | Cloned: `orca-portuguese`, `orca-navigation-shortcuts`, `orca-multipass-recipes` |
+| P0c | Clone theme/skill plugin repos into `_sources/` | **DONE** | Cloned: `orca-solarized-terminal`, `orca-minimal-icons`, `orca-nord-theme`, `orca-midnight-theme`, `orca-workflow-skills` |
+| P0d | Study marketplace index format from cloned repo | **DONE** | Schema documented in `.Fabrica-plugins-board/P0-source-study.md` |
+| P0e | Study bundled plugin manifest format | **DONE** | `orca-plugin.json` format documented in `.Fabrica-plugins-board/P0-source-study.md` |
+| P0f | Document rename strategy | **DONE** | Rename strategy documented in `.Fabrica-plugins-board/P0-source-study.md` |
 
 ---
 
