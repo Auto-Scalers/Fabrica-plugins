@@ -33,7 +33,7 @@
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| P1 | Initialize marketplace index JSON | **TODO** | Schema: plugin ID, name, description, author, version, download URL, compatibility. Build from cloned `stablyai/orca-plugins` reference. |
+| P1 | Initialize marketplace index JSON | **DONE** | `marketplace-index.json` created with 8 bundled plugins, following `stablyai`→`autoscalers` rename strategy. |
 | P2 | Add bundled plugins to index | **TODO** | `fabrica-portuguese`, `fabrica-multipass-recipes`, `fabrica-navigation-shortcuts` |
 | P3 | Plugin submission guidelines | **TODO** | How third-party devs submit plugins |
 
