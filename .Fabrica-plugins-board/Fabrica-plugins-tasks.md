@@ -34,8 +34,8 @@
 | # | Task | Status | Notes |
 |---|------|--------|-------|
 | P1 | Initialize marketplace index JSON | **DONE** | `marketplace-index.json` created with 8 bundled plugins, following `stablyai`→`autoscalers` rename strategy. |
-| P2 | Add bundled plugins to index | **TODO** | `fabrica-portuguese`, `fabrica-multipass-recipes`, `fabrica-navigation-shortcuts` |
-| P3 | Plugin submission guidelines | **TODO** | How third-party devs submit plugins |
+| P2 | Add bundled plugins to index | **DONE** | All 8 bundled plugins verified present in `marketplace-index.json`. |
+| P3 | Plugin submission guidelines | **DONE** | Documented in `.Fabrica-plugins-board/P3-plugin-submission-guidelines.md`. |
 
 ---
 
@@ -43,8 +43,8 @@
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| P4 | Define plugin manifest schema | **TODO** | `engines.fabrica` field, version constraints |
-| P5 | Plugin validation rules | **TODO** | Required fields, version format, URL validation |
+| P4 | Define plugin manifest schema | **DONE** | `fabrica-plugin.json` schema documented in `.Fabrica-plugins-board/P4-plugin-manifest-schema.md`. |
+| P5 | Plugin validation rules | **DONE** | Documented in `.Fabrica-plugins-board/P5-plugin-validation-rules.md`. |
 
 ---
 
