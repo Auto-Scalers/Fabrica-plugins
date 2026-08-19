@@ -52,8 +52,8 @@
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| P6 | Plugin review process | **TODO** | Manual review before listing |
-| P7 | Kill-list management | **TODO** | Block malicious/broken plugins |
+| P6 | Plugin review process | **DONE** | Documented in `.Fabrica-plugins-board/P6-plugin-review-process.md`. |
+| P7 | Kill-list management | **DONE** | Documented in `.Fabrica-plugins-board/P7-kill-list-management.md`. |
 | P8 | Plugin signing (future) | **TODO** | Verify plugin authenticity |
 
 ---
@@ -62,14 +62,30 @@
 
 | # | Task | Status | Notes |
 |---|------|--------|-------|
-| P9 | Plugin loader reads from marketplace | **TODO** | `Fabrica-plugins` repo → desktop app |
-| P10 | Plugin update mechanism | **TODO** | Check for new versions |
+| P9 | Plugin loader reads from marketplace | **DONE** | Already fully implemented — marketplace fetches via Git clone, caches snapshots, bundles bootstrap to filesystem, discovery finds them, IPC handlers registered, startup wires it all. Verified by audit in Fabrica-app. |
+| P10 | Plugin update mechanism | **DONE** | Already fully wired — previewMarketplaceUpdate, "Check for update" button, installMarketplacePlugin IPC with rollback, seedOfficialSource on startup. Verified by audit. |
 
 ---
 
 ## What Needs Verification
 
 - [~] GitHub repo created (`Auto-Scalers/Fabrica-plugins`)
+
+---
+
+## Session Ledger
+
+> Tracks orchestration sessions and workers for this task file. Updated when sessions are created, released, or worktrees merged.
+
+| Session Handle | Type | Task/Group | Status | Created | Worktree Branch | Merged |
+|---------------|------|-----------|--------|---------|----------------|--------|
+| `term_24ff1a27-8b86-43f8-9206-73367917448f` | orchestrator | plugins-orchestrator | **active** | Aug 2026 | `main` (Fabrica-plugins/) | — |
+
+**Rules:**
+- Only the main orchestrator creates sessions in this ledger
+- Workers are released after review
+- Worktrees are merged immediately after approval
+- Never leave orphaned sessions
 
 ---
 
