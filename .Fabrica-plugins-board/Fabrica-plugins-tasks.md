@@ -54,7 +54,7 @@
 |---|------|--------|-------|
 | P6 | Plugin review process | **DONE** | Documented in `.Fabrica-plugins-board/P6-plugin-review-process.md`. |
 | P7 | Kill-list management | **DONE** | Documented in `.Fabrica-plugins-board/P7-kill-list-management.md`. |
-| P8 | Plugin signing (future) | **TODO** | Verify plugin authenticity |
+| P8 | Plugin signing (future) | **DONE** | Research complete. Orca never signed plugins (SHA-256 content hashing + GitHub provenance). Recommendation: zero-cost Tier-1 baseline (signed Git tags + GPG keys + SHA-256 in marketplace). Apple Dev Program ($99/yr) is hard blocker for macOS. Report: `.Fabrica-plugins-board/P8-plugin-signing-research.md` |
 
 ---
 
