@@ -11,12 +11,34 @@ This is the **Fabrica plugin marketplace** — a JSON registry of available plug
 - Marketplace index: `fabrica-marketplace.json` (app fetches this at startup)
 - Kill list: managed by the app, this repo provides the JSON format
 
+## Tech Stack
+
+- Plain JSON (`fabrica-marketplace.json`, kill-list format) — no build step
+- Git submodules for plugin repos
+- Markdown docs in `.Fabrica-plugins-board/`
+
+## Commands
+
+No build or test tooling. Before claiming DONE:
+
+- Validate `fabrica-marketplace.json` parses as JSON (e.g. `node -e "JSON.parse(require('fs').readFileSync('fabrica-marketplace.json','utf8'))"`).
+- Confirm no `orca`/`stablyai` leftovers outside `_sources/` and historical notes.
+- Confirm every marketplace entry matches the manifest schema documented in the board.
+
 ## Plugin Manifest Format
 
 Each plugin has a `fabrica-plugin.json` (was `orca-plugin.json`) with:
 - `id`, `name`, `version`, `description`
 - `engines: { fabrica: ">=1.0.0" }` (was `engines.orca`)
 - `publisher: { name: "autoscalers" }` (was `stablyai`)
+
+## Definition of Done
+
+A task is DONE only when ALL of these hold:
+
+1. **JSON valid:** `fabrica-marketplace.json` (or the kill-list format) parses cleanly and follows the documented schema.
+2. **No Orca/Stably leftovers** outside `_sources/` and historical notes.
+3. **Tracking files updated in the same edit:** task status + Rollup recount in `.Fabrica-plugins-board/Fabrica-plugins-tasks.md`, Checkpoint table, Session Ledger row.
 
 ## What You Do NOT Do
 
@@ -33,9 +55,39 @@ fabrica-marketplace.json    — Main marketplace index (JSON)
 fabrica-*/                  — Plugin repos (submodules)
 ```
 
+## Parallelism & Anti-Overlap Policy
+
+> This project runs REAL 24/7 multi-terminal orchestration. Parallelism is the
+> default: unlimited tokens, multi-terminal app, massive project, close deadline.
+
+- **Minimum fleet:** the orchestrator keeps AT LEAST 3 active worker terminals at
+  all times. Fewer than 3 on resume or cycle end => launching more comes FIRST,
+  chosen from the highest-priority TODO/VERIFY tasks in this file, focused on
+  high-level goals and principles, not micro-edits.
+- **One task = one worker:** claim a task by setting its status IN_PROGRESS and
+  recording your terminal handle in the Session Ledger BEFORE starting. Claimed
+  tasks are forbidden to everyone else.
+- **One folder = one orchestrator:** never work another slot's folder.
+- **One file = one writer:** two live workers never edit the same file; such tasks
+  run sequentially.
+- **Claim-before-work:** confirm your Task ID is still unclaimed before executing;
+  if done or claimed, stop and report instead of duplicating.
+- **Cross-project dependencies:** record them as notes in the OTHER project's task
+  file; never edit another project directly.
+- **Quality bar unchanged under deadline pressure:** no DONE without verified
+  evidence; status change and Rollup update happen in the same edit.
+
 ## Task File
 
-Your task file is `.Fabrica-plugins-board/Fabrica-plugins-tasks.md` — the single source of truth for all plugin work.
+Your task file is `.Fabrica-plugins-board/Fabrica-plugins-tasks.md` — the single source of truth for all plugin work. Schema for all tracking edits: `.Fabrica-board/Fabrica-Schema.md` (Tracking Schema v1 — status enum, Rollup, Checkpoint, Session Ledger).
+
+## Resume Protocol
+
+On heartbeat kick or session resume:
+
+1. Read your task file's **Checkpoint (Current State)** table FIRST.
+2. Continue from the **Next Action** cell — never restart completed work; check Status + Notes before dispatching.
+3. Any status change updates the Rollup in the same edit.
 
 ## How to Send Results
 
