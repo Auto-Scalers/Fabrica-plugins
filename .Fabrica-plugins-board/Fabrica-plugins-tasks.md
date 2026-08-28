@@ -175,6 +175,13 @@ Resume rules for heartbeat kicks:
 | Handle | Type | Task ID | Orchestration IDs | Status | Created | Branch | Merged |
 |---|---|---|---|---|---|---|---|
 | `term_24ff1a27-8b86-43f8-9206-73367917448f` | orchestrator | — | `term_24ff1a27-8b86-43f8-9206-73367917448f` | 🔶 IN_PROGRESS | Aug 2026 | `main` (Fabrica-plugins/) | — |
+| `worker-app-g5-fix` | worker | APP-G5-FIX | `task_app-g5-fix` / `ctx_app-g5-fix` | ✅ DONE (local; AWAITING PUSH) | Aug 2026 | `main` (Fabrica-plugins/) | No — PM must push to origin/main |
+
+> APP-G5-FIX: changed `fabrica-marketplace.json` owner `autoscalers`→`auto-scalers` so
+> `validateMarketplaceProvenance` accepts the official index. Regression test added in
+> **Fabrica-app** (`src/main/plugins/plugin-marketplace-provenance.test.ts`, 2 passing).
+> `OFFICIAL_MARKETPLACE_OWNER` in Fabrica-app already equals `auto-scalers` (matches).
+> **Worker committed locally only — PM must push BOTH Fabrica-plugins AND Fabrica-app to origin/main.**
 
 ---
 
