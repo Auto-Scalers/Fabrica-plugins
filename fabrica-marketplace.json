@@ -1,6 +1,6 @@
 {
   "name": "Fabrica Official Plugins",
-  "owner": "autoscalers",
+  "owner": "auto-scalers",
   "plugins": [
     {
       "id": "autoscalers.fabrica-midnight-theme",
