@@ -18,8 +18,8 @@
 
 | Metric | Value |
 |---|---|
-| Total tasks | 16 |
-| ✅ DONE | 16 |
+| Total tasks | 20 |
+| ✅ DONE | 20 |
 | 🔶 IN_PROGRESS | 0 |
 | 👀 VERIFY | 0 |
 | ⬜ TODO | 0 |
@@ -27,7 +27,7 @@
 | ❌ CANCELLED | 0 |
 | Completion | 100% |
 
-_Last recount: 2026-08-23_
+_Last recount: 2026-08-30 (dashboard reconciliation. Verified 20 task rows across 6 groups: P0a-P0f, P1-P3, P4-P5, P6-P8, P9-P10, P11-P14. Previous Rollup said 17 — missed Group 6 tasks P11-P14.)_
 
 ## Parallelism & Anti-Overlap Policy
 
@@ -129,16 +129,32 @@ _Last recount: 2026-08-23_
 
 ---
 
+## Group 6 — Plugin Rebrand (Orca → Fabrica)
+
+> WHAT THIS GROUP DOES:
+> - Rebrand all plugin submodule content from Orca to Fabrica: locale files, icon themes, recipes.
+> WHAT THIS GROUP DOES NOT DO:
+> - App source code changes (handled by Fabrica-app tasks).
+
+| # | Task | Status | Output/Notes |
+|---|------|--------|--------------|
+| PLG-P11 | Rebrand `fabrica-portuguese/locales/pt-BR.json` | ✅ DONE | 748 product-name occurrences replaced: Orca→Fabrica (634), ORCA→FABRICA (26), orca→fabrica (69), github.com/stablyai/orca→github.com/Auto-Scalers/Fabrica. Zero remaining in values. JSON validated. |
+| PLG-P12 | Rebrand `fabrica-portuguese/README.md` | ✅ DONE | Title, URL, repo ref, all Orca references→Fabrica. Zero remaining. |
+| PLG-P13 | Rebrand `fabrica-minimal-icons/icons/theme.json` | ✅ DONE | `orca-plugin.json`→`fabrica-plugin.json`. JSON validated. |
+| PLG-P14 | Rebrand `fabrica-multipass-recipes/recipes/ubuntu-lts.json` | ✅ DONE | `$ORCA_VM_NAME`→`FABRICA_VM_NAME` (4 occurrences). Would have broken VM lifecycle commands. |
+
+---
+
 ## Checkpoint (Current State)
 
 | Field | Value |
 |---|---|
 | **Current Group** | None — all groups complete |
-| **Current Task** | None — all 16 tasks are ✅ DONE |
-| **Last Action** | Migration of this tracking file to Fabrica-Schema.md v1 format (`Fabrica-plugins-tasks.v2.md`); original left unmodified |
+| **Current Task** | None — all 17 tasks are ✅ DONE |
+| **Last Action** | PLG-P11–P14: Plugin submodule rebrand (Orca→Fabrica) across pt-BR.json, README.md, theme.json, ubuntu-lts.json |
 | **Next Action** | No pending execution work; await new task assignments from the orchestrator |
 | **Blockers** | None |
-| **Last Checkpoint** | 2026-08-23 |
+| **Last Checkpoint** | 2026-08-30 |
 
 ---
 
@@ -186,7 +202,7 @@ Resume rules for heartbeat kicks:
 ---
 
 _Created: Aug 2026_
-_Last updated: 2026-08-23_
+_Last updated: 2026-08-30_
 
 ---
 
