@@ -1,9 +1,0 @@
-[submodule "fabrica-portuguese"]
-	path = fabrica-portuguese
-	url = https://github.com/Auto-Scalers/fabrica-portuguese.git
-[submodule "fabrica-navigation-shortcuts"]
-	path = fabrica-navigation-shortcuts
-	url = https://github.com/Auto-Scalers/fabrica-navigation-shortcuts.git
-[submodule "fabrica-multipass-recipes"]
-	path = fabrica-multipass-recipes
-	url = https://github.com/Auto-Scalers/fabrica-multipass-recipes.git
