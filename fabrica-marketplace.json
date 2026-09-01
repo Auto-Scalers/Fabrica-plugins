@@ -3,36 +3,6 @@
   "owner": "auto-scalers",
   "plugins": [
     {
-      "id": "autoscalers.fabrica-midnight-theme",
-      "source": {
-        "kind": "git",
-        "url": "https://github.com/Auto-Scalers/fabrica-midnight-theme.git",
-        "ref": "v1.0.0"
-      },
-      "description": "A quiet dark theme tuned for long coding sessions.",
-      "categories": ["themes", "official"]
-    },
-    {
-      "id": "autoscalers.fabrica-workflow-skills",
-      "source": {
-        "kind": "git",
-        "url": "https://github.com/Auto-Scalers/fabrica-workflow-skills.git",
-        "ref": "v1.0.0"
-      },
-      "description": "Practical skills for planning, reviewing, and handing off repository work.",
-      "categories": ["skills", "official"]
-    },
-    {
-      "id": "autoscalers.fabrica-nord-theme",
-      "source": {
-        "kind": "git",
-        "url": "https://github.com/Auto-Scalers/fabrica-nord-theme.git",
-        "ref": "v1.0.0"
-      },
-      "description": "A cool, low-contrast application theme inspired by arctic colors.",
-      "categories": ["themes", "official"]
-    },
-    {
       "id": "autoscalers.fabrica-portuguese",
       "source": {
         "kind": "git",
@@ -41,26 +11,6 @@
       },
       "description": "Brazilian Portuguese translations for common Fabrica navigation.",
       "categories": ["languages", "official"]
-    },
-    {
-      "id": "autoscalers.fabrica-minimal-icons",
-      "source": {
-        "kind": "git",
-        "url": "https://github.com/Auto-Scalers/fabrica-minimal-icons.git",
-        "ref": "v1.0.0"
-      },
-      "description": "A compact monochrome icon theme for common source files.",
-      "categories": ["icons", "official"]
-    },
-    {
-      "id": "autoscalers.fabrica-solarized-terminal",
-      "source": {
-        "kind": "git",
-        "url": "https://github.com/Auto-Scalers/fabrica-solarized-terminal.git",
-        "ref": "v1.0.0"
-      },
-      "description": "Solarized Dark terminal colors packaged for Fabrica.",
-      "categories": ["terminal-themes", "official"]
     },
     {
       "id": "autoscalers.fabrica-multipass-recipes",

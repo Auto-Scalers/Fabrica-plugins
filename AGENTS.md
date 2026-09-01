@@ -11,6 +11,14 @@ This is the **Fabrica plugin marketplace** — a JSON registry of available plug
 - Marketplace index: `fabrica-marketplace.json` (app fetches this at startup)
 - Kill list: managed by the app, this repo provides the JSON format
 
+## Current Plugins
+
+| Plugin | Category | Bundled |
+|--------|----------|---------|
+| `fabrica-portuguese` | languages | No |
+| `fabrica-multipass-recipes` | vm-recipes | No |
+| `fabrica-navigation-shortcuts` | keybindings | Yes |
+
 ## Tech Stack
 
 - Plain JSON (`fabrica-marketplace.json`, kill-list format) — no build step
@@ -27,10 +35,10 @@ No build or test tooling. Before claiming DONE:
 
 ## Plugin Manifest Format
 
-Each plugin has a `fabrica-plugin.json` (was `orca-plugin.json`) with:
+Each plugin has a `fabrica-plugin.json` with:
 - `id`, `name`, `version`, `description`
-- `engines: { fabrica: ">=1.0.0" }` (was `engines.orca`)
-- `publisher: { name: "autoscalers" }` (was `stablyai`)
+- `engines: { fabrica: ">=1.0.0" }`
+- `publisher: { name: "autoscalers" }`
 
 ## Definition of Done
 
@@ -49,10 +57,12 @@ A task is DONE only when ALL of these hold:
 ## Key Files
 
 ```
-fabrica-marketplace.json    — Main marketplace index (JSON)
-.gitmodules                 — Submodule references to plugin repos
-.Fabrica-plugins-board/     — Task file and planning docs
-fabrica-*/                  — Plugin repos (submodules)
+fabrica-marketplace.json          — Main marketplace index (JSON)
+.gitmodules                       — Submodule references to plugin repos
+.Fabrica-plugins-board/           — Task file and planning docs
+fabrica-portuguese/               — Portuguese language plugin
+fabrica-multipass-recipes/        — Multipass recipes plugin
+fabrica-navigation-shortcuts/     — Navigation shortcuts plugin (bundled)
 ```
 
 ## Parallelism & Anti-Overlap Policy

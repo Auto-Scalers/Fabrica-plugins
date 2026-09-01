@@ -2,7 +2,7 @@
 
 > Single source of truth for plugin marketplace work. The Roadmap (`.Fabrica-Board/Fabrica-Roadmap.md`) tracks cross-cutting status only — this file owns execution details.
 >
-> Schema compliance: `.Fabrica-board/Fabrica-Schema.md` (Fabrica Tracking Schema v1). Migrated from `Fabrica-plugins-tasks.md` (original retained unmodified).
+> Schema compliance: `.Fabrica-board/Fabrica-Schema.md` (Fabrica Tracking Schema v1).
 
 ## High-Level Goals
 
@@ -18,8 +18,8 @@
 
 | Metric | Value |
 |---|---|
-| Total tasks | 20 |
-| ✅ DONE | 20 |
+| Total tasks | 18 |
+| ✅ DONE | 18 |
 | 🔶 IN_PROGRESS | 0 |
 | 👀 VERIFY | 0 |
 | ⬜ TODO | 0 |
@@ -27,7 +27,7 @@
 | ❌ CANCELLED | 0 |
 | Completion | 100% |
 
-_Last recount: 2026-08-30 (dashboard reconciliation. Verified 20 task rows across 6 groups: P0a-P0f, P1-P3, P4-P5, P6-P8, P9-P10, P11-P14. Previous Rollup said 17 — missed Group 6 tasks P11-P14.)_
+_Last recount: 2026-08-31 (cleanup. Removed 5 unsupported plugins: midnight-theme, nord-theme, solarized-terminal, minimal-icons, workflow-skills. Deleted GitHub repos. Updated marketplace to 3 plugins.)_
 
 ## Parallelism & Anti-Overlap Policy
 
@@ -64,10 +64,9 @@ _Last recount: 2026-08-30 (dashboard reconciliation. Verified 20 task rows acros
 |---|------|--------|--------------|
 | PLG-P0a | Clone `stablyai/orca-plugins` into `_sources/orca-plugins/` | ✅ DONE | Cloned to `_sources/orca-plugins/` |
 | PLG-P0b | Clone bundled plugin repos into `_sources/` | ✅ DONE | Cloned: `orca-portuguese`, `orca-navigation-shortcuts`, `orca-multipass-recipes` |
-| PLG-P0c | Clone theme/skill plugin repos into `_sources/` | ✅ DONE | Cloned: `orca-solarized-terminal`, `orca-minimal-icons`, `orca-nord-theme`, `orca-midnight-theme`, `orca-workflow-skills` |
-| PLG-P0d | Study marketplace index format from cloned repo | ✅ DONE | Schema documented in `.Fabrica-plugins-board/P0-source-study.md` |
-| PLG-P0e | Study bundled plugin manifest format | ✅ DONE | `orca-plugin.json` format documented in `.Fabrica-plugins-board/P0-source-study.md` |
-| PLG-P0f | Document rename strategy | ✅ DONE | Rename strategy documented in `.Fabrica-plugins-board/P0-source-study.md` |
+| PLG-P0c | Study marketplace index format from cloned repo | ✅ DONE | Schema documented in `.Fabrica-plugins-board/P0-source-study.md` |
+| PLG-P0d | Study bundled plugin manifest format | ✅ DONE | `orca-plugin.json` format documented in `.Fabrica-plugins-board/P0-source-study.md` |
+| PLG-P0e | Document rename strategy | ✅ DONE | Rename strategy documented in `.Fabrica-plugins-board/P0-source-study.md` |
 
 ---
 
@@ -80,8 +79,8 @@ _Last recount: 2026-08-30 (dashboard reconciliation. Verified 20 task rows acros
 
 | # | Task | Status | Output/Notes |
 |---|------|--------|--------------|
-| PLG-P1 | Initialize marketplace index JSON | ✅ DONE | `marketplace-index.json` created with 8 bundled plugins, following `stablyai`→`autoscalers` rename strategy. |
-| PLG-P2 | Add bundled plugins to index | ✅ DONE | All 8 bundled plugins verified present in `marketplace-index.json`. |
+| PLG-P1 | Initialize marketplace index JSON | ✅ DONE | `fabrica-marketplace.json` created with 3 bundled plugins (portuguese, multipass-recipes, navigation-shortcuts). |
+| PLG-P2 | Add bundled plugins to index | ✅ DONE | All 3 bundled plugins verified present in `fabrica-marketplace.json`. |
 | PLG-P3 | Plugin submission guidelines | ✅ DONE | Documented in `.Fabrica-plugins-board/P3-plugin-submission-guidelines.md`. |
 
 ---
@@ -132,7 +131,7 @@ _Last recount: 2026-08-30 (dashboard reconciliation. Verified 20 task rows acros
 ## Group 6 — Plugin Rebrand (Orca → Fabrica)
 
 > WHAT THIS GROUP DOES:
-> - Rebrand all plugin submodule content from Orca to Fabrica: locale files, icon themes, recipes.
+> - Rebrand plugin submodule content from Orca to Fabrica: locale files, recipes.
 > WHAT THIS GROUP DOES NOT DO:
 > - App source code changes (handled by Fabrica-app tasks).
 
@@ -140,7 +139,6 @@ _Last recount: 2026-08-30 (dashboard reconciliation. Verified 20 task rows acros
 |---|------|--------|--------------|
 | PLG-P11 | Rebrand `fabrica-portuguese/locales/pt-BR.json` | ✅ DONE | 748 product-name occurrences replaced: Orca→Fabrica (634), ORCA→FABRICA (26), orca→fabrica (69), github.com/stablyai/orca→github.com/Auto-Scalers/Fabrica. Zero remaining in values. JSON validated. |
 | PLG-P12 | Rebrand `fabrica-portuguese/README.md` | ✅ DONE | Title, URL, repo ref, all Orca references→Fabrica. Zero remaining. |
-| PLG-P13 | Rebrand `fabrica-minimal-icons/icons/theme.json` | ✅ DONE | `orca-plugin.json`→`fabrica-plugin.json`. JSON validated. |
 | PLG-P14 | Rebrand `fabrica-multipass-recipes/recipes/ubuntu-lts.json` | ✅ DONE | `$ORCA_VM_NAME`→`FABRICA_VM_NAME` (4 occurrences). Would have broken VM lifecycle commands. |
 
 ---
@@ -150,11 +148,11 @@ _Last recount: 2026-08-30 (dashboard reconciliation. Verified 20 task rows acros
 | Field | Value |
 |---|---|
 | **Current Group** | None — all groups complete |
-| **Current Task** | None — all 17 tasks are ✅ DONE |
-| **Last Action** | PLG-P11–P14: Plugin submodule rebrand (Orca→Fabrica) across pt-BR.json, README.md, theme.json, ubuntu-lts.json |
+| **Current Task** | None — all 18 tasks are ✅ DONE |
+| **Last Action** | Cleanup: removed 5 unsupported plugins (midnight-theme, nord-theme, solarized-terminal, minimal-icons, workflow-skills). Deleted GitHub repos. Updated marketplace to 3 plugins. |
 | **Next Action** | No pending execution work; await new task assignments from the orchestrator |
 | **Blockers** | None |
-| **Last Checkpoint** | 2026-08-30 |
+| **Last Checkpoint** | 2026-08-31 |
 
 ---
 
@@ -178,40 +176,15 @@ Resume rules for heartbeat kicks:
 
 ---
 
-## What Needs Verification
-
-- [ ] GitHub repo created (`Auto-Scalers/Fabrica-plugins`) — legacy `[~]` marker from original mapped to 👀 VERIFY context per Schema §1 legacy mapping (`[~]→VERIFY`)
-
----
-
 ## Session Ledger
 
 > Tracks orchestration sessions and workers for this task file. Updated when sessions are created, released, or worktrees merged. Canonical columns per Schema §6.
 
 | Handle | Type | Task ID | Orchestration IDs | Status | Created | Branch | Merged |
 |---|---|---|---|---|---|---|---|
-| `term_24ff1a27-8b86-43f8-9206-73367917448f` | orchestrator | — | `term_24ff1a27-8b86-43f8-9206-73367917448f` | 🔶 IN_PROGRESS | Aug 2026 | `main` (Fabrica-plugins/) | — |
-| `worker-app-g5-fix` | worker | APP-G5-FIX | `task_app-g5-fix` / `ctx_app-g5-fix` | ✅ DONE (local; AWAITING PUSH) | Aug 2026 | `main` (Fabrica-plugins/) | No — PM must push to origin/main |
-
-> APP-G5-FIX: changed `fabrica-marketplace.json` owner `autoscalers`→`auto-scalers` so
-> `validateMarketplaceProvenance` accepts the official index. Regression test added in
-> **Fabrica-app** (`src/main/plugins/plugin-marketplace-provenance.test.ts`, 2 passing).
-> `OFFICIAL_MARKETPLACE_OWNER` in Fabrica-app already equals `auto-scalers` (matches).
-> **Worker committed locally only — PM must push BOTH Fabrica-plugins AND Fabrica-app to origin/main.**
+| `term_24ff1a27-8b86-43f8-9206-73367917448f` | orchestrator | — | `term_24ff1a27-8b86-43f8-9206-73367917448f` | ✅ DONE | Aug 2026 | `main` (Fabrica-plugins/) | — |
 
 ---
 
 _Created: Aug 2026_
-_Last updated: 2026-08-30_
-
----
-
-## Migration verification
-
-- Source file: `.Fabrica-plugins-board/Fabrica-plugins-tasks.md` (92 lines, unmodified)
-- Target file: `.Fabrica-plugins-board/Fabrica-plugins-tasks.v2.md`
-- Task count in original: **16** (P0a–P0f, P1–P3, P4–P5, P6–P8, P9–P10)
-- Task count in v2: **16** (PLG-P0a–PLG-P0f, PLG-P1–PLG-P3, PLG-P4–PLG-P5, PLG-P6–PLG-P8, PLG-P9–PLG-P10)
-- Discrepancy check (tasks present in old but missing in new): **zero**
-- Status conversion applied: all original `DONE` statuses map 1:1 to Schema §1 `✅ DONE` via identity (no legacy-mapped statuses other than the `What Needs Verification` `[~]` marker, noted inline above); Rollup recounted from actual tables (16/16 DONE, 100%).
-- Migration date: 2026-08-23
+_Last updated: 2026-08-31_
