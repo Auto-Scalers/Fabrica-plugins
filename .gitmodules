@@ -1,15 +1,3 @@
-[submodule "fabrica-midnight-theme"]
-	path = fabrica-midnight-theme
-	url = https://github.com/Auto-Scalers/fabrica-midnight-theme.git
-[submodule "fabrica-nord-theme"]
-	path = fabrica-nord-theme
-	url = https://github.com/Auto-Scalers/fabrica-nord-theme.git
-[submodule "fabrica-solarized-terminal"]
-	path = fabrica-solarized-terminal
-	url = https://github.com/Auto-Scalers/fabrica-solarized-terminal.git
-[submodule "fabrica-minimal-icons"]
-	path = fabrica-minimal-icons
-	url = https://github.com/Auto-Scalers/fabrica-minimal-icons.git
 [submodule "fabrica-portuguese"]
 	path = fabrica-portuguese
 	url = https://github.com/Auto-Scalers/fabrica-portuguese.git
@@ -19,6 +7,3 @@
 [submodule "fabrica-multipass-recipes"]
 	path = fabrica-multipass-recipes
 	url = https://github.com/Auto-Scalers/fabrica-multipass-recipes.git
-[submodule "fabrica-workflow-skills"]
-	path = fabrica-workflow-skills
-	url = https://github.com/Auto-Scalers/fabrica-workflow-skills.git
